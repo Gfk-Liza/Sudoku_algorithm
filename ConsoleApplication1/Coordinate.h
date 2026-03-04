@@ -17,5 +17,6 @@ public:
 	void decrease();
 	bool is_valid() const;
 	void print() const;
+	int get_group_number() const;
 };
 

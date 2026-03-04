@@ -54,3 +54,8 @@ void Coordinate::print() const
 {
 	std::cout << "y=" << this->y << ", x=" << this->x << std::endl;
 }
+
+int Coordinate::get_group_number() const
+{
+	return this->x / GROUP_SIZE + this->y / GROUP_SIZE * GROUP_SIZE;
+}
