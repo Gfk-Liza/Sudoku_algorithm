@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BitBoard.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="constants.h" />
     <ClCompile Include="Coordinate.cpp" />
@@ -29,6 +30,7 @@
     <ClCompile Include="Solver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BitBoard.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Generator.h" />
