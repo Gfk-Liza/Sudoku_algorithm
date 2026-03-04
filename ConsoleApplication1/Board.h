@@ -10,14 +10,14 @@ private:
 	BitBoard bitboards[NUMBERS];
 public:
 	Board();
-	unsigned int get(const Coordinate xy) const;  // この関数はCoordinateが配列の範囲内であるかどうかを検証しない。
+	unsigned int get(const Coordinate xy) const;  // This function does not check whether Coordinate is within array bounds.
 	
-	bool is_empty(const Coordinate xy) const;  // この関数はCoordinateが配列の範囲内であるかどうかを検証しない。
-	bool is_valid(const Coordinate xy, const unsigned int value) const;  // この関数はCoordinateが配列の範囲内であるかやその場所か空白であるかを検証しない。
+	bool is_empty(const Coordinate xy) const;  // This function does not check whether Coordinate is within array bounds.
+	bool is_valid(const Coordinate xy, const unsigned int value) const;  // This function does not check whether Coordinate is within array bounds or whether the cell is empty.
 	void print() const;
-	void set(const Coordinate xy, const unsigned int value);  // この関数はCoordinateが配列の範囲内であるかどうかを検証しない。また、value!=0
-	void erase(const Coordinate xy, const unsigned int value);  // この関数はCoordinateが配列の範囲内であるかどうかを検証しない。また、value!=0
-	void erase(const Coordinate xy);  // この関数はCoordinateが配列の範囲内であるかどうかを検証しない。
+	void set(const Coordinate xy, const unsigned int value);  // This function does not check whether Coordinate is within array bounds. Also assumes value != 0
+	void erase(const Coordinate xy, const unsigned int value);  // This function does not check whether Coordinate is within array bounds. Also assumes value != 0
+	void erase(const Coordinate xy);  // This function does not check whether Coordinate is within array bounds.
 
 	friend bool operator==(const Board& a, const Board& b);
 	friend bool operator!=(const Board& a, const Board& b);

@@ -52,13 +52,13 @@ int Coordinate::get_bitboard_index() const
 
 unsigned int Coordinate::get_bitboard_y_mask() const
 {
-	return 511 << this->xy / BOARD_SIZE % GROUP_SIZE;
+	return 511 << (this->xy / BOARD_SIZE % GROUP_SIZE * BOARD_SIZE);
 }
 
 unsigned int Coordinate::get_bitboard_x_mask() const
 {
 	unsigned int mask_x = 1 << this->xy % 9;
-	mask_x |= mask_x << 18 | mask_x << 9;
+	mask_x |= (mask_x << 18 | mask_x << 9);
 	return mask_x;
 }
 
@@ -66,11 +66,11 @@ unsigned int Coordinate::get_bitboard_group_mask() const
 {
 	switch (this->xy % BOARD_SIZE / GROUP_SIZE) {
 	case 0:
-		return 117670336;
+		return 1838599;
 	case 1:
 		return 14708792;
 	case 2:
-		return 1838599;
+		return 117670336;
 	}
 	return 0;
 }

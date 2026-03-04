@@ -38,6 +38,9 @@
     <ClInclude Include="SimpleSolver.h" />
     <ClInclude Include="Solver.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Directory.Build.props" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

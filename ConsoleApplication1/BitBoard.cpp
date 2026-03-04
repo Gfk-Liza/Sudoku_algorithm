@@ -36,7 +36,7 @@ void BitBoard::set(const Coordinate xy)
 
 void BitBoard::erase(const Coordinate xy)
 {
-	this->bit_board[xy.get_bitboard_index()] ^= xy.get_bitboard_spesific_mask();
+	this->bit_board[xy.get_bitboard_index()] &= ~xy.get_bitboard_spesific_mask();
 }
 
 bool BitBoard::does_exist(const Coordinate xy) const
