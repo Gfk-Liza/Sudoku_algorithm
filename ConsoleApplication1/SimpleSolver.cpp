@@ -13,8 +13,8 @@ bool SimpleSolver::solve_dfs(Coordinate xy)
 		if (!this->board.is_valid(xy, i)) continue;
 		this->board.set(xy, i);
 		if (this->solve_dfs(next_xy)) return true;
+		this->board.erase(xy, i);
 	}
-	this->board.erase(xy);
 	return false;
 }
 
@@ -31,8 +31,8 @@ bool SimpleSolver::reverse_solve_dfs(Coordinate xy)
 		if (!this->board.is_valid(xy, i)) continue;
 		this->board.set(xy, i);
 		if (this->reverse_solve_dfs(next_xy)) return true;
+		this->board.erase(xy, i);
 	}
-	this->board.erase(xy);
 	return false;
 }
 

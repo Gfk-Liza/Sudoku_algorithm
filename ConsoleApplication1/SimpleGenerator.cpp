@@ -43,8 +43,8 @@ bool SimpleGenerator::base_generator(Coordinate xy)
         if (!this->board.is_valid(xy, shuffled_numbers[i])) continue;
         this->board.set(xy, shuffled_numbers[i]);
         if (this->base_generator(next_xy)) return true;
+        this->board.erase(xy, shuffled_numbers[i]);
     }
-    this->board.erase(xy);
     return false;
 }
 

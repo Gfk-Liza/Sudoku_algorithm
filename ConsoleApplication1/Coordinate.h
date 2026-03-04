@@ -5,18 +5,24 @@
 class Coordinate
 {
 private:
-	int x, y;
+	int xy;
+
 public:
 	Coordinate();
 	Coordinate(const int new_x, const int new_y);
+	Coordinate(const int new_xy);
 
 	int getx() const;
 	int gety() const;
-	Coordinate get_group() const;  // その座標が属するgroup（数独の正方形集合）の主座標（左上の座標）を返す。
 	void increase();
 	void decrease();
 	bool is_valid() const;
 	void print() const;
-	int get_group_number() const;
+	int get_bitboard_index() const;
+
+	unsigned int get_bitboard_x_mask() const;
+	unsigned int get_bitboard_y_mask() const;
+	unsigned int get_bitboard_group_mask() const;
+	unsigned int get_bitboard_spesific_mask() const;
 };
 
