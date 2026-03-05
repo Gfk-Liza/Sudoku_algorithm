@@ -4,7 +4,7 @@
 #include <iostream>
 #include <chrono>
 
-inline static const unsigned int LOOP_NUMBER = 10000;
+inline static const unsigned int LOOP_NUMBER = 100000;
 
 int main() {
 	std::chrono::system_clock::time_point begin;
@@ -33,4 +33,5 @@ int main() {
 }
 
 // normal: 849.8329 (microsec/process)
+// bitboard: 635.9584 (microsec/process)
 
