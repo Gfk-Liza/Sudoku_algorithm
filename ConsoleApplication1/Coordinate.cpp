@@ -57,27 +57,9 @@ unsigned int Coordinate::get_bitboard_y_mask() const
 
 unsigned int Coordinate::get_bitboard_x_mask() const
 {
-	switch (this->xy % 9) {
-	case 0:
-		return 262657;
-	case 1:
-		return 525314;
-	case 2:
-		return 1050628;
-	case 3:
-		return 2101256;
-	case 4:
-		return 4202512;
-	case 5:
-		return 8405024;
-	case 6:
-		return 16810048;
-	case 7:
-		return 33620096;
-	case 8:
-		return 67240192;
-	}
-	return 0;
+	unsigned int mask_x = 1 << this->xy % 9;
+	mask_x |= (mask_x << 18 | mask_x << 9);
+	return mask_x;
 }
 
 unsigned int Coordinate::get_bitboard_group_mask() const
