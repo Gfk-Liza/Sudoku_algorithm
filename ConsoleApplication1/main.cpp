@@ -4,7 +4,7 @@
 #include <iostream>
 #include <chrono>
 
-inline static const unsigned int LOOP_NUMBER = 10000;
+inline static const unsigned int LOOP_NUMBER = 100000;
 
 int main() {
 	std::chrono::system_clock::time_point begin;
