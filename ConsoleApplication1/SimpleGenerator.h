@@ -9,8 +9,11 @@ class SimpleGenerator :
 {
 private:
     Board board;
+    Board answer;
     SimpleSolver solver;
     std::array<Coordinate, CELL_NUMBER> delete_order;
+
+
     bool is_valid();  // 解に一意性があるか調べる。
     bool erase(const unsigned int index); // this->delete_numberのindex-1までだけをeraseしたとき、返り値がtrueなら解に一意性がある、falseなら無い. falseのときは盤面を元に戻す.
     bool base_generator(Coordinate xy);  // 再帰用
