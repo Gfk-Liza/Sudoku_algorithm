@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BitBoard.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="constants.h" />
     <ClCompile Include="Coordinate.cpp" />
@@ -29,12 +30,16 @@
     <ClCompile Include="Solver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BitBoard.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Generator.h" />
     <ClInclude Include="SimpleGenerator.h" />
     <ClInclude Include="SimpleSolver.h" />
     <ClInclude Include="Solver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Directory.Build.props" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

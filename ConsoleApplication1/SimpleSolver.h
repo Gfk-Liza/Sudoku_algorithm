@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Solver.h"
 #include "Board.h"
 #include "Coordinate.h"
@@ -10,7 +10,7 @@ private:
     bool solve_dfs(Coordinate xy);
     bool reverse_solve_dfs(Coordinate xy);
 public:
-    void solve();  // ’Pƒ‚ÈDFS‚Å‰ğ‚­
+    void solve();  // å˜ç´”ãªDFSã§è§£ã
     void reverse_solve();
 };
 

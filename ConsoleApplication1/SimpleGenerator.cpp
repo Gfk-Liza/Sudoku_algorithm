@@ -4,11 +4,10 @@ bool SimpleGenerator::is_valid()
 {
     this->solver.set(this->board);
     this->solver.solve();
-    Board tmp_board = this->solver.get();
+    if (this->answer != this->solver.get()) return false;
     this->solver.set(this->board);
     this->solver.reverse_solve();
-    Board tmp2_board = this->solver.get();
-    return tmp_board == tmp2_board;
+    return this->answer == this->solver.get();
 }
 
 bool SimpleGenerator::erase(const unsigned int index)
@@ -27,6 +26,7 @@ bool SimpleGenerator::erase(const unsigned int index)
 void SimpleGenerator::base_generator()
 {
     this->base_generator(Coordinate());
+    this->answer = this->board.copy();;
 }
 
 bool SimpleGenerator::base_generator(Coordinate xy)
@@ -43,8 +43,8 @@ bool SimpleGenerator::base_generator(Coordinate xy)
         if (!this->board.is_valid(xy, shuffled_numbers[i])) continue;
         this->board.set(xy, shuffled_numbers[i]);
         if (this->base_generator(next_xy)) return true;
+        this->board.erase(xy, shuffled_numbers[i]);
     }
-    this->board.erase(xy);
     return false;
 }
 
